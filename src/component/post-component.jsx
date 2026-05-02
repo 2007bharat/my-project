@@ -29,28 +29,41 @@
 
 
 
- export function Component({name , subtitle , time ,image, description}){
+ export function Component({ name, subtitle, time, image, description }) {
+  return (
+    <div
+      style={{
+        background: "white",
+        width: 300,
+        borderRadius: 10,
+        borderColor: "red",
+        borderWidth: 2,
+        padding: 30,
+        height: "10vh",
+        margin: "10px auto",   // ✅ center horizontally
+      }}
+    >
+      <div style={{ display: "flex" }}>
+        <img style={{ height: 40, width: 40 }} src={image} alt="user-img" />
 
-  return( 
-    <div style={{background : "white", width: 300, backgroundColor : "white", borderRadius : 10,  borderColor  : "red", borderWidth : 2, padding: 30, height : "10vh" }}>
-    <div style={{display : "flex" }}>
+        <div style={{ marginLeft: 20 }}>
+          <b>{name}</b>
+          <div>{subtitle}</div>
 
-    
-      <img style={{height: 40 ,  width:40}} src={image} alt="user-img" />
-    
-      <div style={{marginLeft : 20}}>
-        <b>{name}</b>
-        <div>{subtitle}</div>
-        {time !== undefined && <div style={{display  : "flex",  }}>
-          <span >{time}</span>
-          <img style={{height : 17,  width : 17, marginLeft : 10}} src={"https://thf.bing.com/th/id/OIP.la16pMQi5pjQmik3lkR1JAHaHa?o=7&cb=thfc1rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"} alt="asdsaf" />
-        </div>}
-
+          {time !== undefined && (
+            <div style={{ display: "flex" }}>
+              <span>{time}</span>
+              <img
+                style={{ height: 17, width: 17, marginLeft: 10 }}
+                src="https://thf.bing.com/th/id/OIP.la16pMQi5pjQmik3lkR1JAHaHa"
+                alt="clock"
+              />
+            </div>
+          )}
+        </div>
       </div>
+
+      <div style={{ marginTop: 20 }}>{description}</div>
     </div>
-      <div style={{fontWeight : 600, marginTop : 20}}>{description}</div>
-    </div>
-    
-    
-  )
- }
+  );
+}
